@@ -15,7 +15,7 @@ Para ejecutar este proyecto localmente, necesitas tener instalado Docker en tu s
    git clone https://github.com/tu-repositorio/proveedor-api.git
    cd povider-crud
 
->[IMPORTANT]
+>[!IMPORTANT]
 >Para el proyecto se debe configurar la variable de entorno  *JWT_SECRET* en el archivo .env y ademas se debe descomentar la linea 9 en el archivo src/routes/api.ts y comentar linea 8, para asi validar con la misma llave publica 
 
 Ejecuta el proyecto utilizando Docker Compose:
