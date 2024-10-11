@@ -93,7 +93,7 @@ En esta peticion la respuesta que tenemos es la informacion que hemos enviado pr
 
 
 ## Obtener informacion de un proveedor
-### Endpoint: **GET**```http://localhost:5000/api/provider/:id```
+### Endpoint: **GET** ```http://localhost:5000/api/provider/:id```
 Descripción: Devuelve los datos de un proveedor específico según su ID.
 ### Resultado esperado
 Para verificar esta peticion lo que hacemos es seleccionar el _id que aparece en el Body de la respuesta dada a la peticion POST anterior.
@@ -144,7 +144,7 @@ una vez ha sido eliminado la respuesta que recibiremos es un mensaje el cual nos
 ![image](https://github.com/user-attachments/assets/fe557bd7-37d7-42db-a107-5ceaf88a8cde)
 
 ## Validar proveedor
-### Endpoint: **PUT** ``http://localhost:5000/api/provider/:id/validate```
+### Endpoint: **PUT** ```http://localhost:5000/api/provider/:id/validate```
 Descripción: Valida un proveedor según su ID esto solo lo podran realizar usuarios administradores.
 ### Resultado esperado
 Para esta peticion necesitaremos el _id del provedor el cual queremos validar, agregando el contenido del body donde cambia el estatus a aprobado
