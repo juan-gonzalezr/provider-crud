@@ -39,8 +39,8 @@ Una vez que Docker Compose termine de levantar los servicios, deberías ver el m
 # Endpoints
 A continuación se describen los endpoints disponibles para gestionar proveedores y consumir la API externa.
 
-##Obtener todos los proveedores
-###Endpoint: **GET**```http://localhost:5000/api/provider```
+## Obtener todos los proveedores
+### Endpoint: **GET**```http://localhost:5000/api/provider```
 Descripción: Devuelve una lista con todos los proveedores.
 Obtener un proveedor por ID
 
