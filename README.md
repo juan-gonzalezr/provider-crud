@@ -7,6 +7,7 @@ Este proyecto consiste en un backend construido con Node.js, Express y MongoDB, 
 
 Para ejecutar este proyecto localmente, necesitas tener instalado Docker en tu sistema. Si no tienes Docker, puedes instalarlo siguiendo las instrucciones [aquí](https://docs.docker.com/get-docker/).
 
+
 ## Instrucciones de instalación y ejecución
 
 1. Clona el repositorio en tu máquina local:
@@ -18,7 +19,9 @@ Ejecuta el proyecto utilizando Docker Compose:
 
 bash
 Copiar código
-docker-compose up --build
+```
+**docker-compose up --build**
+```
 Este comando se encargará de construir la imagen de Docker y levantar tanto el backend como la base de datos MongoDB. El backend estará disponible en el puerto 5000 y la base de datos MongoDB en el puerto 27017.
 
 Una vez que Docker Compose termine de levantar los servicios, deberías ver el mensaje Connected to MongoDb en la consola, lo cual indica que la aplicación está lista para ser utilizada.
