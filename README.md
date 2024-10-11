@@ -15,8 +15,7 @@ Para ejecutar este proyecto localmente, necesitas tener instalado Docker en tu s
    git clone https://github.com/tu-repositorio/proveedor-api.git
    cd povider-crud
 
->[!IMPORTANT]
->Para el proyecto se debe configurar la variable de entorno  *JWT_SECRET* en el archivo .env y ademas se debe descomentar la linea 9 en el archivo **src/routes/api.ts** y comentar linea 8, para asi validar con la misma llave publica, soy conciente que el subir el archivo .env es una mala practica, pero al ser todo esto de forma aislada no hay inconveniente.
+
 
 >[!IMPORTANT]
 >En la raiz del proyecto se encuentra la coleccion de peticiones usadas en *Postman* para testear, se facilitan para que se importen y los puedan testear facilmente
@@ -30,6 +29,8 @@ docker-compose up --build
 Este comando se encargará de construir la imagen de Docker y levantar tanto el backend como la base de datos MongoDB. El backend estará disponible en el puerto 5000 y la base de datos MongoDB en el puerto 27017.
 
 Una vez que Docker Compose termine de levantar los servicios, deberías ver el mensaje Connected to MongoDb en la consola, lo cual indica que la aplicación está lista para ser utilizada.
+>[!IMPORTANT]
+>Para el proyecto se debe configurar la variable de entorno  *JWT_SECRET* en el archivo .env y ademas se debe descomentar la linea 9 en el archivo **src/routes/api.ts** y comentar linea 8, para asi validar con la misma llave publica, soy conciente que el subir el archivo .env es una mala practica, pero al ser todo esto de forma aislada no hay inconveniente.
 
 #Endpoints
 A continuación se describen los endpoints disponibles para gestionar proveedores y consumir la API externa.
