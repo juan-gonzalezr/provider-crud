@@ -1,5 +1,4 @@
-# provider-crud
-# Proveedor API - Backend con Docker
+# Proveedor-crud - Backend con Docker
 
 Este proyecto consiste en un backend construido con Node.js, Express y MongoDB, el cual permite gestionar proveedores. Además, incluye el uso de Docker para facilitar la configuración y la ejecución del proyecto, sin necesidad de instalar dependencias localmente.
 
@@ -14,13 +13,17 @@ Para ejecutar este proyecto localmente, necesitas tener instalado Docker en tu s
 
    ```bash
    git clone https://github.com/tu-repositorio/proveedor-api.git
-   cd proveedor-api
+   cd povider-crud
+
+>[IMPORTANT]
+>Para el proyecto se debe configurar la variable de entorno  *JWT_SECRET* en el archivo .env y ademas se debe descomentar la linea 9 en el archivo src/routes/api.ts y comentar linea 8, para asi validar con la misma llave publica 
+
 Ejecuta el proyecto utilizando Docker Compose:
 
 bash
 Copiar código
 ```
-**docker-compose up --build**
+docker-compose up --build
 ```
 Este comando se encargará de construir la imagen de Docker y levantar tanto el backend como la base de datos MongoDB. El backend estará disponible en el puerto 5000 y la base de datos MongoDB en el puerto 27017.
 
@@ -40,6 +43,7 @@ Cuerpo de la petición (JSON):
 
 json
 Copiar código
+```
 {
   "nit": "123456789",
   "firstName": "John",
@@ -59,6 +63,7 @@ Copiar código
     "accountType": "Savings"
   }
 }
+```
 Obtener todos los proveedores
 
 Endpoint: GET /provider
