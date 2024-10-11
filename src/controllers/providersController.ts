@@ -73,9 +73,9 @@ export const validateProvider = async (
   res: Response
 ): Promise<void> => {
   try {
-    const provider = await Provider.findById(req.params.id);
-    provider
-      ? res.status(200).json(provider)
+    const providerValidate = await Provider.findByIdAndUpdate(req.params.id,req.body, { new: true });
+    providerValidate
+      ? res.status(200).json(providerValidate)
       : res.status(404).json({ message: "Provider not found" });
   } catch (error) {
     handleErrorResponse(res, error);
