@@ -1,13 +1,17 @@
 # Proveedor-crud - Backend con Docker
 
-Este proyecto consiste en un backend construido con Node.js, Express y MongoDB, el cual permite gestionar proveedores. Además, incluye el uso de Docker para facilitar la configuración y la ejecución del proyecto, sin necesidad de instalar dependencias localmente.
+>[!IMPORTANT]
+>Este proyecto está pensado para facilitar el desarrollo y las pruebas locales con Docker. No necesitas instalar dependencias en tu máquina local, ya que Docker se encarga de todo el entorno de ejecución. Asegúrate de tener instalado docker y docker compose y que los puertos 5000 y 27017 estén libres en tu sistema antes de ejecutar el proyecto con Docker Compose.
 
 ## Requisitos
 
-Para ejecutar este proyecto localmente, necesitas tener instalado Docker en tu sistema. Si no tienes Docker, puedes instalarlo siguiendo las instrucciones [aquí](https://docs.docker.com/get-docker/).
+Para ejecutar este proyecto localmente, necesitas tener instalado Docker y Docker Compose en tu sistema. Si no los tienes, puedes instalarlos siguiendo las instrucciones a continuación:
+
+- **Docker:** [Instrucciones de instalación](https://docs.docker.com/get-docker/)
+- **Docker Compose:** [Instrucciones de instalación](https://docs.docker.com/compose/install/)
 
 
-## Instrucciones de instalación y ejecución
+## Instrucciones de instalación y ejecución del proyecto
 
 1. Clona el repositorio en tu máquina local:
 
@@ -124,11 +128,17 @@ Copiar código
 ### Endpoint: **GET** ``http://localhost:5000/api/projects``
 Descripción: Devuelve una lista de proyectos desde la API externa.
 >[!WARNING]
-> Para la autenticación completa, descomentar la linea 9 en la siguiente ruta **src/routes/api.ts** y comentar linea 8 en el código y asegurarse de tener configurada la variable de entorno *JWT_SECRET* en el archivo .env
+> Para la validacion completa del token se necesita la llave publica JWT con la que se creo para asi poder verificarla, para esto hay descomentar la linea 9 en la siguiente ruta **src/routes/api.ts** y comentar linea 8 en el código y asegurarse de tener configurada la variable de entorno *JWT_SECRET* en el archivo .env
 
 Código que hay que descomentar
 ```// router.get('/projects', authenticateJWT, consumeAPIProjects);```
 
+## Variables de entorno
+Este proyecto utiliza las siguientes variables de entorno, que puedes configurar en un archivo .env en la raíz del proyecto:
+```
+MONGO_URI: URL de la base de datos MongoDB.
+JWT_SECRET: Clave secreta para la autenticación con JWT.
+```
 # Uso de Postman para pruebas
 Puedes usar Postman para probar los endpoints. Solo necesitas configurar las peticiones con los métodos GET, POST, PUT, y DELETE, según lo descrito anteriormente.
 
@@ -162,12 +172,8 @@ pm.test("Token guardado correctamente como variable global", function () {
 
 bash
 Copiar código
-Authorization: Bearer {{jwtToken}}
-Variables de entorno
-Este proyecto utiliza las siguientes variables de entorno, que puedes configurar en un archivo .env en la raíz del proyecto:
+key: 'Authorization', value: 'Bearer {{authToken}}'
 
-MONGO_URI: URL de la base de datos MongoDB.
-JWT_SECRET: Clave secreta para la autenticación con JWT.
-Notas adicionales
-Este proyecto está pensado para facilitar el desarrollo y las pruebas locales con Docker. No necesitas instalar dependencias en tu máquina local, ya que Docker se encarga de todo el entorno de ejecución.
-Asegúrate de que los puertos 5000 y 27017 estén libres en tu sistema antes de ejecutar el proyecto con Docker Compose.
+
+
+
