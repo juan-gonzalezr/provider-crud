@@ -32,7 +32,7 @@ Una vez que Docker Compose termine de levantar los servicios, deberías ver el m
 >[!IMPORTANT]
 >Para el proyecto se debe configurar la variable de entorno  *JWT_SECRET* en el archivo .env y ademas se debe descomentar la linea 9 en el archivo **src/routes/api.ts** y comentar linea 8, para asi validar con la misma llave publica, soy conciente que el subir el archivo .env es una mala practica, pero al ser todo esto de forma aislada no hay inconveniente.
 
-#Endpoints
+# Endpoints
 A continuación se describen los endpoints disponibles para gestionar proveedores y consumir la API externa.
 
 ##Obtener todos los proveedores
@@ -40,8 +40,8 @@ A continuación se describen los endpoints disponibles para gestionar proveedore
 Descripción: Devuelve una lista con todos los proveedores.
 Obtener un proveedor por ID
 
-##Crear proveedor
-###Endpoint: **POST** ```http://localhost:5000/api//provider```
+## Crear proveedor
+### Endpoint: **POST** ```http://localhost:5000/api//provider```
 Descripción: Crea un nuevo proveedor en la base de datos.
 
 >[!NOTE]
@@ -72,12 +72,12 @@ Copiar código
 }
 ```
 
-##Obtener informacion de un proveedor
-###Endpoint: **GET**```http://localhost:5000/api/provider/:id```
+## Obtener informacion de un proveedor
+### Endpoint: **GET**```http://localhost:5000/api/provider/:id```
 Descripción: Devuelve los datos de un proveedor específico según su ID.
 
-##Actualizar proveedor
-###Endpoint: **PUT** ```http://localhost:5000/api/provider/:id```
+## Actualizar proveedor
+### Endpoint: **PUT** ```http://localhost:5000/api/provider/:id```
 Descripción: Actualiza la información de un proveedor según su ID.
 >[!NOTE]
 > En el archivo **providerTestPUT.ts** en la raiz del proyecto se encuentran ejemplos de modificaciones de proveedores que pueden ser usados para testear
@@ -97,17 +97,17 @@ Copiar código
 }
 ```
 
-##Eliminar proveedor
-###Endpoint: **DELETE** ```http://localhost:5000/api/provider/:id```
+## Eliminar proveedor
+### Endpoint: **DELETE** ```http://localhost:5000/api/provider/:id```
 Descripción: Elimina un proveedor de la base de datos según su ID.
 
-##Validar proveedor
-##Endpoint: **PUT** ``http://localhost:5000/api/provider/:id/validate```
+## Validar proveedor
+### Endpoint: **PUT** ``http://localhost:5000/api/provider/:id/validate```
 Descripción: Valida un proveedor según su ID.
-#API externa
+# API externa
 
-##Obtener token JWT
-###Endpoint: **POST** ``http://localhost:5000/api/login``
+## Obtener token JWT
+### Endpoint: **POST** ``http://localhost:5000/api/login``
 Descripción: Obtiene un token JWT para autenticarse con la API externa.
 
 Cuerpo de la petición (JSON):
@@ -120,8 +120,8 @@ Copiar código
   "password": "default"
 }
 ```
-##Consumir proyectos de la API externa
-###Endpoint: **GET** ``http://localhost:5000/api/projects``
+## Consumir proyectos de la API externa
+### Endpoint: **GET** ``http://localhost:5000/api/projects``
 Descripción: Devuelve una lista de proyectos desde la API externa.
 >[!WARNING]
 > Para la autenticación completa, descomentar la linea 9 en la siguiente ruta **src/routes/api.ts** y comentar linea 8 en el código y asegurarse de tener configurada la variable de entorno *JWT_SECRET* en el archivo .env
@@ -129,7 +129,7 @@ Descripción: Devuelve una lista de proyectos desde la API externa.
 Código que hay que descomentar
 ```// router.get('/projects', authenticateJWT, consumeAPIProjects);```
 
-#Uso de Postman para pruebas
+# Uso de Postman para pruebas
 Puedes usar Postman para probar los endpoints. Solo necesitas configurar las peticiones con los métodos GET, POST, PUT, y DELETE, según lo descrito anteriormente.
 
 Variables globales en Postman
