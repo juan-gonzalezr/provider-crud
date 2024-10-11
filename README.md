@@ -225,7 +225,7 @@ pm.test("Token guardado correctamente como variable global", function () {
 });
 ```
 
-bash
+
 Copiar código
 key: 'Authorization', value: 'Bearer {{authToken}}'
 
