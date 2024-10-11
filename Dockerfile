@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Usa ts-node para ejecutar el archivo principal TypeScript
-CMD ["npx", "ts-node", "src/server.ts"]
+CMD ["sh", "-c", "npx ts-node src/scripts/seedProviders.ts && npx ts-node src/server.ts"]

@@ -1,0 +1,43 @@
+[
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "bankDetails": {
+        "bank": "Bank ABC",
+        "accountType": "Checking"
+      }
+    },
+    {
+      "providerType": "National",
+      "personType": "Legal",
+      "bankDetails": {
+        "bank": "Bank XYZ"
+      }
+    },
+    {
+      "beneficiaries": [
+        {
+          "name": "Sophia Brown",
+          "idNumber": "987987987"
+        }
+      ],
+      "bankDetails": {
+        "accountType": "Savings"
+      }
+    },
+    {
+      "firstName": "Carlos",
+      "bankDetails": {
+        "bank": "Bank GHI",
+        "accountNumber": "456456456"
+      }
+    },
+    {
+      "lastName": "Davis",
+      "providerType": "International",
+      "bankDetails": {
+        "accountType": "Checking"
+      }
+    }
+  ]
+  

@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "f3241dec-a77c-4fc2-917b-8abda3f32d58",
+		"name": "provider-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13302773"
+	},
+	"item": [
+		{
+			"name": "GET/providers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/provider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nit\": \"123456789\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"idNumber\": \"987654321\",\r\n  \"providerType\": \"National\",\r\n  \"personType\": \"Natural\",\r\n  \"beneficiaries\": [\r\n    {\r\n      \"name\": \"Jane Smith\",\r\n      \"idNumber\": \"123123123\"\r\n    }\r\n  ],\r\n  \"bankDetails\": {\r\n    \"bank\": \"Bank XYZ\",\r\n    \"accountNumber\": \"000111222\",\r\n    \"accountType\": \"Savings\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/provider/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/provider/6708764e7fe418b2bbf8c4c5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"provider",
+						"6708764e7fe418b2bbf8c4c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT/provider/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"John Updated\",\r\n  \"lastName\": \"Doe Updated\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/provider/67086f019a4c8d6706e83834",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"provider",
+						"67086f019a4c8d6706e83834"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE/provider/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/provider/67086f019a4c8d6706e83834",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"provider",
+						"67086f019a4c8d6706e83834"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT/provider/{id}/validate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"Approved\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/provider/6708764e7fe418b2bbf8c4c5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"provider",
+						"6708764e7fe418b2bbf8c4c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Verificamos si la respuesta tiene éxito \r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Extraemos el token de la respuesta JSON\r",
+							"let jsonData = pm.response.json();\r",
+							"let token = jsonData.token; \r",
+							"\r",
+							"// Guardamos el token como una variable global en Postman\r",
+							"pm.globals.set(\"authToken\", token);\r",
+							"\r",
+							"// Verificamos que la variable global fue establecida correctamente\r",
+							"pm.test(\"Token guardado correctamente como variable global\", function () {\r",
+							"    pm.expect(pm.globals.get(\"authToken\")).to.eql(token);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"prueba\",\r\n  \"pswd\": \"4d89b2a6498c0f4170ef9aa1de125a27.1dd564de6063cf1e0ec171ad7d030595730b0704a17fae8b066e44f67633ea876e8dfda41176672341b4f42aa044e4a2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/projects",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

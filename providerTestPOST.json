@@ -1,0 +1,98 @@
+[
+    {
+      "nit": "987654321",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "idNumber": "654321987",
+      "providerType": "National",
+      "personType": "Legal",
+      "beneficiaries": [
+        {
+          "name": "Bob Johnson",
+          "idNumber": "321654987"
+        }
+      ],
+      "bankDetails": {
+        "bank": "Bank ABC",
+        "accountNumber": "123123456",
+        "accountType": "Checking"
+      }
+    },
+    {
+      "nit": "456789123",
+      "firstName": "David",
+      "lastName": "Brown",
+      "idNumber": "789123456",
+      "providerType": "National",
+      "personType": "Natural",
+      "beneficiaries": [
+        {
+          "name": "Sophia Brown",
+          "idNumber": "987987987"
+        }
+      ],
+      "bankDetails": {
+        "bank": "Bank DEF",
+        "accountNumber": "456789123",
+        "accountType": "Savings"
+      }
+    },
+    {
+      "nit": "654321987",
+      "firstName": "Carlos",
+      "lastName": "Martinez",
+      "idNumber": "321987654",
+      "providerType": "International",
+      "personType": "Natural",
+      "beneficiaries": [
+        {
+          "name": "Luisa Martinez",
+          "idNumber": "147258369"
+        }
+      ],
+      "bankDetails": {
+        "bank": "Bank GHI",
+        "accountNumber": "789456123",
+        "accountType": "Savings"
+      }
+    },
+    {
+      "nit": "789123654",
+      "firstName": "Emily",
+      "lastName": "Garcia",
+      "idNumber": "987654321",
+      "providerType": "National",
+      "personType": "Legal",
+      "beneficiaries": [
+        {
+          "name": "Michael Garcia",
+          "idNumber": "258147369"
+        }
+      ],
+      "bankDetails": {
+        "bank": "Bank JKL",
+        "accountNumber": "321654987",
+        "accountType": "Checking"
+      }
+    },
+    {
+      "nit": "321654987",
+      "firstName": "Sophia",
+      "lastName": "Davis",
+      "idNumber": "456123789",
+      "providerType": "International",
+      "personType": "Natural",
+      "beneficiaries": [
+        {
+          "name": "Liam Davis",
+          "idNumber": "369258147"
+        }
+      ],
+      "bankDetails": {
+        "bank": "Bank MNO",
+        "accountNumber": "987321654",
+        "accountType": "Savings"
+      }
+    }
+  ]
+  
