@@ -18,6 +18,7 @@ Para ejecutar este proyecto localmente, necesitas tener instalado Docker y Docke
    ```bash
    git clone https://github.com/tu-repositorio/proveedor-api.git
    cd povider-crud
+   npm install
 
 Ejecuta el proyecto utilizando Docker Compose:
 
@@ -44,6 +45,7 @@ Si no tienes Docker o Docker Compose, puedes seguir los pasos a continuación pa
    ```bash
    git clone https://github.com/tu-repositorio/proveedor-api.git
    cd povider-crud
+   npm install
    npm start
 
 
