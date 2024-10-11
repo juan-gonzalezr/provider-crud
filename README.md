@@ -19,10 +19,6 @@ Para ejecutar este proyecto localmente, necesitas tener instalado Docker y Docke
    git clone https://github.com/tu-repositorio/proveedor-api.git
    cd povider-crud
 
-
-
->[!IMPORTANT]
->En la raiz del proyecto se encuentra la coleccion de peticiones usadas en *Postman* para testear, se facilitan para que se importen y los puedan testear facilmente
 Ejecuta el proyecto utilizando Docker Compose:
 
 bash
@@ -33,6 +29,27 @@ docker-compose up --build
 Este comando se encargará de construir la imagen de Docker y levantar tanto el backend como la base de datos MongoDB. El backend estará disponible en el puerto 5000 y la base de datos MongoDB en el puerto 27017.
 
 Una vez que Docker Compose termine de levantar los servicios, deberías ver el mensaje Connected to MongoDb en la consola, lo cual indica que la aplicación está lista para ser utilizada.
+
+2. Para ejecutar el proyecto localmente sin Docker, necesitas tener instalados los siguientes elementos en tu máquina:
+
+- **Node.js** (versión 20 o superior): [Instrucciones de instalación](https://nodejs.org/)
+- **MongoDB** (versión 4.4 o superior): [Instrucciones de instalación](https://www.mongodb.com/try/download/community)
+
+## Instalación
+
+Si no tienes Docker o Docker Compose, puedes seguir los pasos a continuación para ejecutar el proyecto localmente:
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/tu-repositorio/proveedor-api.git
+   cd povider-crud
+   npm start
+
+
+>[!IMPORTANT]
+>En la raiz del proyecto se encuentra la coleccion de peticiones usadas en *Postman* para testear, se facilitan para que se importen y los puedan testear facilmente
+
 >[!IMPORTANT]
 >Para el proyecto se debe configurar la variable de entorno  *JWT_SECRET* en el archivo .env y ademas se debe descomentar la linea 9 en el archivo **src/routes/api.ts** y comentar linea 8, para asi validar con la misma llave publica, soy conciente que el subir el archivo .env es una mala practica, pero al ser todo esto de forma aislada no hay inconveniente.
 
